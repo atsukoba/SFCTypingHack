@@ -1,0 +1,14 @@
+{
+  "name": "TypeHack",
+  "description": "SFC-Typing Hack",
+  "version": "0.1",
+  "manifest_version": 2,
+  "content_scripts": [{
+    "matches": ["https://itclass.sfc.keio.ac.jp/typingtest/student/*"],
+    "js": ["jquery-2.2.0.min.js",  "setup.js", "hack.js"]
+  }],
+  "options_page": "options.html",
+  "permissions": [
+    "storage"
+  ]
+}
