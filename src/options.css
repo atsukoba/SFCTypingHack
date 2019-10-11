@@ -1,0 +1,17 @@
+header {
+  padding: 15px;
+}
+h1, h2, h3, h4, p {
+  text-align: center;
+}
+.button {
+  display: inline-block;
+  width: fit-content;
+  margin: 5px 15px;
+}
+#kamo {
+  width: calc(100vw/4);
+  display: block;
+  margin: 0 auto;
+  transition: 1000ms;
+}
