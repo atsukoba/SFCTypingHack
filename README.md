@@ -6,4 +6,8 @@ Hack Typing test <https://itclass.sfc.keio.ac.jp/typingtest/> for students at SF
 
 ## use
 
-`/src` を <chrome://extensions> から登録。
+from Chrome webstore, install SFC-TypingHack.
+
+<https://chrome.google.com/webstore/detail/typehack/jeikgkmohhelefpjflnjmhfieddmkido?hl=ja>
+
+もしくは`/src` を <chrome://extensions> から登録。
