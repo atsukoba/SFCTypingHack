@@ -24,3 +24,5 @@ const colorChanger = setInterval(() => {;
   let rgb = hsl2rgb(Math.random(), 1.0, 0.75);
   document.getElementById("kamo").style.fill = `rgb(${rgb.join(',')})`;
 }, 1000);
+
+window.onload = SVGInject(document.getElementById("kamo"));
