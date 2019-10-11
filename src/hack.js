@@ -1,4 +1,4 @@
-let c = {
+const c = {
   " ":32, "0":48, "1":49, "2":50, "3":51, "4":52, "5":53, "6":54, "7":55, "8":56, "9":57,
   "a":65, "b":66, "c":67, "d":68, "e":69, "f":70, "g":71, "h":72, "i":73, "j":74, "k":75,
   "l":76, "m":77, "n":78, "o":79, "p":80, "q":81, "r":82, "s":83, "t":84, "u":85, "v":86,
@@ -11,22 +11,38 @@ let c = {
   "{":519, "+":489, "*":355, "}":521, "<":488, ">":490, "?":491
 };
 
-let i = 0;
-
-$("#practice-start-button").click(() => {
-  console.log("Autotyper started");
-  let speed = Number(document.getElementById("speed-selector").value);
-  console.log(`Speed: ${speed}`);
-  setInterval(() => {
+const startAutoType = (speed, errorRate) => {
+  let i = 0;
+  autoType = setInterval(() => {
     k = document.getElementById(`word${i}`);
     if (k != null) {
       key = k.innerHTML;
       console.log(`Typed: ${key}`);
-      document.getElementById(`type-display`).innerText = `Typed: ${key} `;
+      document.getElementById(`type-display`).innerText = `Typed key: ${key} `;
+
+      // random error
+      if (Math.random() <= errorRate) {
+        document.dispatchEvent(
+          new KeyboardEvent("keydown", {keyCode: c[key] + 1})
+        );  
+      }
+      // type
       document.dispatchEvent(
         new KeyboardEvent("keydown", {keyCode: c[key]})
       );
       i++;
     }
   }, speed);
+  console.log("AutoType started");
+  console.log(`Speed: ${speed} per second`);
+  console.log(`Error: ${errorRate} %`);
+  console.dir(autoType);
+}
+
+// when 「練習する」 clicked
+$("#practice-start-button").click(() => {
+  console.log("Practice Started");
+  let speed = Number(document.getElementById("speed-selector").value);
+  let errorRate = Number(document.getElementById("error-rate").value);
+  startAutoType(speed, errorRate);
 });
