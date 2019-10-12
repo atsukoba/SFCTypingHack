@@ -2,7 +2,7 @@
   "name": "SFC-TypingHack",
   "description": "SFC-Typing Hack Extension: incredible speed typing automation",
   "short_name": "SFCTypeHack",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "manifest_version": 2,
   "author": "atsuyakoba",
   "incognito": "not_allowed",
