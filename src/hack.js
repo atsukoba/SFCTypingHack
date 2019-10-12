@@ -40,9 +40,11 @@ const startAutoType = (speed, errorRate) => {
 }
 
 // when 「練習する」 clicked
-$("#practice-start-button").click(() => {
-  console.log("Practice Started");
-  let speed = Number(document.getElementById("speed-selector").value);
-  let errorRate = Number(document.getElementById("error-rate").value);
-  startAutoType(speed, errorRate);
+$(window).load(() => {
+  $("#practice-start-button").click(() => {
+    console.log("Practice Started");
+    let speed = Number(document.getElementById("speed-selector").value);
+    let errorRate = Number(document.getElementById("error-rate").value);
+    startAutoType(speed, errorRate);
+  });  
 });
