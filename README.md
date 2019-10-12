@@ -2,7 +2,7 @@
 
 Hack Typing test <https://itclass.sfc.keio.ac.jp/typingtest/> for students at SFC
 
-![gif](https://i.gyazo.com/13b55e6ab1bbba542742e59f85f012fe.gif)
+![gif](https://i.gyazo.com/b99f2398a19333f72fcd4b9010dfe397.gif)
 
 ## use
 
