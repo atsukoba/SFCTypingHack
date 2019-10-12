@@ -18,7 +18,7 @@ const startAutoType = (speed, errorRate) => {
     if (k != null) {
       key = k.innerHTML;
       console.log(`Typed: ${key}`);
-      document.getElementById(`type-display`).innerText = `Typed key: ${key} `;
+      document.getElementById(`type-display`).innerText = `key: ${key} `;
 
       // random error
       if (Math.random() <= errorRate) {
@@ -39,12 +39,18 @@ const startAutoType = (speed, errorRate) => {
   console.dir(autoType);
 }
 
+const updateMsg = (msg, duration) => {
+  document.getElementById("msg-display").innerText = msg;
+  setTimeout(() => {
+    document.getElementById("msg-display").innerText = "";
+  }, duration);
+}
+
 // when 「練習する」 clicked
-$(window).load(() => {
-  $("#practice-start-button").click(() => {
-    console.log("Practice Started");
-    let speed = Number(document.getElementById("speed-selector").value);
-    let errorRate = Number(document.getElementById("error-rate").value);
-    startAutoType(speed, errorRate);
-  });  
+$(document).on("click", "#practice-start-button", () => {
+  console.log("Practice Started");
+  let speed = Number(document.getElementById("speed-selector").value);
+  let errorRate = Number(document.getElementById("error-rate").value);
+  startAutoType(speed, errorRate);
+  updateMsg("AutoType Started", 2500);
 });
